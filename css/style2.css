@@ -46,7 +46,7 @@
 	padding: 10px;
 	font-size: 15px;
 	color: white;
-	background: #5F9EA0;
+	background: #F50057;
 	border: none;
 	border-radius: 5px;
   }
@@ -54,15 +54,15 @@
 	width: 92%; 
 	margin: 0px auto; 
 	padding: 10px; 
-	border: 1px solid #a94442; 
-	color: #a94442; 
+	border: 1px solid#F50057; 
+	color: #F50057; 
 	background: #f2dede; 
 	border-radius: 5px; 
 	text-align: left;
   }
   .success {
-	color: #3c763d; 
-	background: #dff0d8; 
-	border: 1px solid #3c763d;
+	color: #ffffff; 
+	background: #F50057; 
+	border: 1px solid #F50057;
 	margin-bottom: 20px;
   }
