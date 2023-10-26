@@ -1,17 +1,22 @@
 <?php
 session_start();
 
+
 // initializing variables
 $username = "";
 $email    = "";
 $errors = array(); 
 
 // connect to the database
+
 $db = mysqli_connect('localhost', 'root', '', 'project');
 
 // REGISTER USER
+
 if (isset($_POST['reg_user'])) {
+
   // receive all input values from the form
+
   $username = mysqli_real_escape_string($db, $_POST['username']);
   $email = mysqli_real_escape_string($db, $_POST['email']);
   $password_1 = mysqli_real_escape_string($db, $_POST['password_1']);
@@ -19,6 +24,7 @@ if (isset($_POST['reg_user'])) {
 
   // form validation: ensure that the form is correctly filled ...
   // by adding JavaScript pop-up alerts for each error
+
   if (empty($username)) { 
     echo "<script>alert('Username is required');</script>";
   } elseif (empty($email)) { 
@@ -28,6 +34,7 @@ if (isset($_POST['reg_user'])) {
   } elseif ($password_1 != $password_2) {
     echo "<script>alert('The two passwords do not match');</script>";
   } else {
+
     // Check if the username or email already exist in the database
     $user_check_query = "SELECT * FROM users WHERE username='$username' OR email='$email' LIMIT 1";
     $result = mysqli_query($db, $user_check_query);
@@ -41,6 +48,7 @@ if (isset($_POST['reg_user'])) {
         echo "<script>alert('Email already exists');</script>";
       }
     } else {
+
       // If the username and email are unique, proceed with registration
       // Hash the password
       $password = md5($password_1);
@@ -86,4 +94,6 @@ if (isset($_POST['login_user'])) {
     }
   }
 }
+
+
 ?>
