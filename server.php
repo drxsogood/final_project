@@ -16,6 +16,8 @@ $db = mysqli_connect('localhost', 'root', '', 'project');
 if (isset($_POST['reg_user'])) {
 
   // receive all input values from the form
+  // escapes special characters in a string for use in an SQL query, 
+  //taking into account the current character set of the connection
 
   $username = mysqli_real_escape_string($db, $_POST['username']);
   $email = mysqli_real_escape_string($db, $_POST['email']);
