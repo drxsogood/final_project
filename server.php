@@ -18,12 +18,13 @@ if (isset($_POST['reg_user'])) {
   // receive all input values from the form
   // escapes special characters in a string for use in an SQL query, 
   //taking into account the current character set of the connection
-
+  // Which is used to collect form data after submitting Post
+  
   $username = mysqli_real_escape_string($db, $_POST['username']);
   $email = mysqli_real_escape_string($db, $_POST['email']);
   $password_1 = mysqli_real_escape_string($db, $_POST['password_1']);
   $password_2 = mysqli_real_escape_string($db, $_POST['password_2']);
-
+ 
   // form validation: ensure that the form is correctly filled ...
   // by adding JavaScript pop-up alerts for each error
 
@@ -68,6 +69,7 @@ if (isset($_POST['reg_user'])) {
     }
   }
 }
+
 // LOGIN USER
 if (isset($_POST['login_user'])) {
   $username = mysqli_real_escape_string($db, $_POST['username']);
